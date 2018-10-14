@@ -13,10 +13,11 @@ Example usage
 
   TouchPad pad;
   if (!pad.start()) 
-    return -1;
+    return;
   while (true) {
     if (pad.update()) {  // New data arrived..
       printf("Fingers:%d Action:%d Zoom:%f Pan:%f %f\r", pad.nfingers, pad.action, pad.zoom_amount, pad.pan_amount.x, pad.pan_amount.y);
+      // pad.fingers[i] to access each individual finger.
     }
   }
 ```
